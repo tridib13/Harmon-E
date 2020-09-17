@@ -16,7 +16,5 @@ const placeCall = () =>
         method: 'GET'
     })
 }
-placeCall()
-console.log(url)
 
 module.exports = placeCall

@@ -14,4 +14,18 @@ router.get('/ambulance.xml', (req, res) =>
     res.send(xmlResponse)
 })
 
+router.get('/police.xml', (req, res) => 
+{
+    const xmlResponse = responder('police')
+    res.type('application/xml')
+    res.send(xmlResponse)
+})
+
+router.get('/fire_engine.xml', (req, res) => 
+{
+    const xmlResponse = responder('fire_engine')
+    res.type('application/xml')
+    res.send(xmlResponse)
+})
+
 module.exports = router
