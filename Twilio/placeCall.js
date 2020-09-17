@@ -12,10 +12,11 @@ const placeCall = () =>
     client.calls.create({
         from: '+12059003645',
         to: '+919674746480',
-        url
+        url,
+        method: 'GET'
     })
 }
-// placeCall()
+placeCall()
 console.log(url)
 
 module.exports = placeCall
