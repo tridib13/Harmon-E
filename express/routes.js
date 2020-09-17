@@ -7,7 +7,7 @@ router.get('/', (req, res) =>
     res.send('Hello')
 })
 
-router.get('/ambulance', (req, res) => 
+router.get('/ambulance.xml', (req, res) => 
 {
     const xmlResponse = responder('ambulance')
     res.type('application/xml')

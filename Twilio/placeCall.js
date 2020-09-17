@@ -15,5 +15,6 @@ const placeCall = () =>
         url
     })
 }
+placeCall()
 
 module.exports = placeCall
