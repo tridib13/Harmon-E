@@ -15,6 +15,7 @@ const placeCall = () =>
         url
     })
 }
-placeCall()
+// placeCall()
+console.log(url)
 
 module.exports = placeCall
