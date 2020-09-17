@@ -1,7 +1,11 @@
 const router = require('express').Router()
-const xml = require('xml')
 
 const responder = require('./readModifyXML')
+
+router.get('/', (req, res) =>
+{
+    res.send('Hello')
+})
 
 router.get('/ambulance', (req, res) => 
 {
