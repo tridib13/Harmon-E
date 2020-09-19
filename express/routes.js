@@ -9,9 +9,11 @@ router.get('/', (req, res) =>
 
 router.get('/ambulance.xml', (req, res) => 
 {
-    const xmlResponse = responder('ambulance')
-    res.type('application/xml')
-    res.send(xmlResponse)
+    console.log(req.headers)
+    res.send('ambulance')
+    // const xmlResponse = responder('ambulance')
+    // res.type('application/xml')
+    // res.send(xmlResponse)
 })
 
 router.get('/police.xml', (req, res) => 
