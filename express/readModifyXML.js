@@ -14,12 +14,12 @@ fs.readFile(pathName, 'utf8', (err, data) =>
     objFormat = JSON.parse(parser.toJson(data, {reversible: true}))
 })
 
-const responder = requiredService =>
+const responder = (requiredService, name, id, history, lat, long) =>
 {
     switch(requiredService)
     {
         case 'ambulance':
-            objFormat.Response.Say['$t'] = 'Ambulance needed'
+            objFormat.Response.Say['$t'] = `Ambulance needed by a patient with id ${id} at latitude ${lat}, ${long}. Patient has a medical history of ${history}. Patient's name is ${name}`
             return parser.toXml(JSON.stringify(objFormat))
 
         case 'police':
