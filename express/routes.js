@@ -3,16 +3,27 @@ const router = require('express').Router()
 const responder = require('./readModifyXML')
 const placeCall = require('../Twilio/placeCall')
 
+let xmlResponse
+
 router.get('/', (req, res) =>
 {
     res.send('Hello')
 })
 
-router.get('/ambulance.xml', (req, res) => 
+router.post('/ambulance', (req, res) => 
 {
-    const { name, id, history, lat, long } = req.params
+    const { name, id, history, lat, long } = req.body.details
 
-    const xmlResponse = responder('ambulance', name, id, history, lat, long)
+    xmlResponse = responder('ambulance', name, id, history, lat, long)
+    // res.type('application/xml')
+    // res.send(xmlResponse)
+    res.redirect('/ambulance.xml')
+
+    // placeCall()
+})
+
+router.get('/ambulance.xml', (req, res) =>
+{
     res.type('application/xml')
     res.send(xmlResponse)
 
