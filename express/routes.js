@@ -8,7 +8,7 @@ router.get('/', (req, res) =>
     res.send('Hello')
 })
 
-router.post('/ambulance.xml', (req, res) => 
+router.get('/ambulance.xml', (req, res) => 
 {
     const { name, id, history, lat, long } = req.params
 
