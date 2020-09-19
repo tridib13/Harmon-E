@@ -12,14 +12,11 @@ router.get('/', (req, res) =>
 
 router.post('/ambulance', (req, res) => 
 {
-    const { name, id, history, lat, long } = req.body.details
+    const { name, id, history, latitude, longitude } = req.body.details
+    
+    xmlResponse = responder('ambulance', name, id, history, latitude, longitude)
 
-    xmlResponse = responder('ambulance', name, id, history, lat, long)
-    // res.type('application/xml')
-    // res.send(xmlResponse)
     res.redirect('/ambulance.xml')
-
-    // placeCall()
 })
 
 router.get('/ambulance.xml', (req, res) =>
