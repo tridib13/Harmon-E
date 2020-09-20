@@ -11,7 +11,7 @@ const sendSMS = (name, id, history, latitude, longitude) =>
         {
             from: '+12059003645',
             to: '+919674746480',
-            body: `Patient name: ${name} \n\n Patient ID: ${id} \n\n Patient medical history: ${history} \n\n Patient location (lat, long): ${latitude, longitude}. \n\n Ambulance required urgently!`
+            body: `\n\nPatient name: ${name} \n\n Patient ID: ${id} \n\n Patient medical history: ${history} \n\n Patient location (latitude, longitude): ${latitude}, ${longitude}. \n\n Ambulance required urgently!`
         }
     )
 }
