@@ -2,6 +2,7 @@ const router = require('express').Router()
 
 const responder = require('./readModifyXML')
 const placeCall = require('../Twilio/placeCall')
+const sendSMS = require('../Twilio/sendSMS')
 
 let xmlResponse
 
@@ -16,6 +17,7 @@ router.post('/ambulance', (req, res) =>
     
     xmlResponse = responder('ambulance', name, id, history, latitude, longitude)
 
+    sendSMS(name, id, history, latitude, longitude)
     res.redirect('/ambulance.xml')
 })
 
@@ -23,7 +25,7 @@ router.get('/ambulance.xml', (req, res) =>
 {
     res.type('application/xml')
     res.send(xmlResponse)
-    
+
     placeCall()
 })
 
