@@ -23,7 +23,7 @@ router.get('/ambulance.xml', (req, res) =>
 {
     res.type('application/xml')
     res.send(xmlResponse)
-
+    
     placeCall()
 })
 
