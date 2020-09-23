@@ -9,8 +9,8 @@ const sendSMS = (name, id, history, latitude, longitude) =>
 {
     client.messages.create(
         {
-            from: '+12059003645',
-            to: '+919674746480',
+            from: keys.CALLER_NUMBER,
+            to: keys.RECEIVER_NUMBER,
             body: `\n\nPatient name: ${name} \n\n Patient ID: ${id} \n\n Patient medical history: ${history} \n\n Patient location (latitude, longitude): ${latitude}, ${longitude}. \n\n Ambulance required urgently!`
         }
     )

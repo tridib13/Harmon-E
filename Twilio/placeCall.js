@@ -10,8 +10,8 @@ const url = keys.TWILIO_CALL_URI
 const placeCall = () =>
 {
     client.calls.create({
-        from: '+12059003645',
-        to: '+919674746480',
+        from: keys.CALLER_NUMBER,
+        to: keys.RECEIVER_NUMBER,
         url,
         method: 'GET'
     })
